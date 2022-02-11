@@ -1,0 +1,142 @@
+// файл обнуляющих стилей
+@import "nullstyle.scss";
+
+%absolut_center{
+   position: absolute;
+   -webkit-transform: translate(-50%, -50%);
+   -moz-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   -o-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+}
+
+@mixin adaptiv-font($pcPx, $mobPx){
+   @media screen and (min-width: 601px){
+      font-size: $pcPx;
+   }
+   @media screen and (max-width: 600px){
+      font-size: $mobPx;
+   }
+}
+
+@mixin adaptiv-button($pcW, $mobW){
+   @media screen and (min-width: 601px){
+      width: $pcW;
+      height: 9%;
+   }
+   @media screen and (max-width: 600px){
+      width: $mobW;
+      height: 8%;
+      position: absolute;
+      top: 87%;
+      left: 65%;
+   }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+
+*, *:after, *:before {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   transition: .5s ease-in-out;
+   /* добавим плавность переходов для всех элементов страницы */
+}
+
+body{
+   width: 100%;
+   height: 100%;
+   font-family: 'Kurale', serif;
+   background: rgb(105, 15, 79);
+   &::-webkit-scrollbar { 
+      width: 5px; 
+      height: 5px;
+   } 
+   &::-webkit-scrollbar-track-piece { 
+      background-color: rgb(255, 255, 255);
+   }
+   &::-webkit-scrollbar-thumb { 
+      height: 50px; 
+      background-color: rgb(105, 15, 79); 
+      border-radius: 5px;
+   }
+}
+
+.v_block{
+   width: 80%;
+   height: 80%;
+   position: relative;
+   border-radius: 20px;
+   border: 3px solid rgb(255, 255, 255);
+   @extend %absolut_center;
+   top: 50%;
+   left: 50%;
+   background: url('../img/giphy1.gif') center center/60% no-repeat, rgb(255, 255, 255);
+   @media screen and (max-width: 600px){
+      background: url('../img/giphy1.gif') center center no-repeat, rgb(255, 255, 255);
+   }
+   box-shadow: 1px 1px 35px rgb(44, 17, 37);
+
+   & h2{
+      @include adaptiv-font(40px, 20px);
+      text-shadow: 1px 1px 5px rgba(105, 15, 80, 0.5);
+      color: rgb(105, 15, 79);
+      font-style: bold;
+      line-height: normal;
+      text-align: right;
+      position: absolute;
+      top: 5%;
+      left: 63%;
+      @media screen and (max-width: 600px){
+         top: 4%;
+         left: 40%;
+      }
+   }
+   p{
+      color: rgb(105, 15, 79);
+      text-shadow: 1px 1px 5px rgba(105, 15, 80, 0.5);
+      @include adaptiv-font(20px, 14px);
+      font-weight: 700;
+      line-height: normal;
+      text-align: left;
+      @extend %absolut_center;
+      top: 50%;
+      left: 15%;
+      @media screen and (max-width: 600px){
+         top: 50%;
+         left: 27%;
+      }
+   }
+
+   & .back{
+      @include adaptiv-button(210px, 100px);
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 4px;
+      border: 3px solid rgb(105, 15, 79);
+      text-shadow: 1px 1px 5px rgba(105, 15, 80, 0.5);
+      position: absolute;
+      top: 83%;
+      left: 77%;
+      & p{
+         text-align: center;
+         font-weight: 700;
+         @extend %absolut_center;
+         top: 50%;
+         left: 50%;
+         @include adaptiv-font(27px, 20px);
+         color: rgb(105, 15, 79);
+      }
+      &:hover{
+         box-shadow: 1px 1px 15px rgb(71, 0, 50);
+         &:active{
+            background-color: rgb(75, 0, 54);
+            width: 205px;
+            height: 9%;
+            @media screen and (max-width: 600px){
+               width: 100px;
+               height: 7.5%;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,257 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, template {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*-------------------------*/
+.v_block, .v_block p, .v_block .back p {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  /* добавим плавность переходов для всех элементов страницы */
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Kurale', serif;
+  background: #690f4f;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+body::-webkit-scrollbar-track-piece {
+  background-color: white;
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: #690f4f;
+  border-radius: 5px;
+}
+
+.v_block {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  border-radius: 20px;
+  border: 3px solid white;
+  top: 50%;
+  left: 50%;
+  background: url("../img/giphy1.gif") center center/60% no-repeat, white;
+  -webkit-box-shadow: 1px 1px 35px #2c1125;
+          box-shadow: 1px 1px 35px #2c1125;
+}
+
+@media screen and (max-width: 600px) {
+  .v_block {
+    background: url("../img/giphy1.gif") center center no-repeat, white;
+  }
+}
+
+.v_block h2 {
+  text-shadow: 1px 1px 5px rgba(105, 15, 80, 0.5);
+  color: #690f4f;
+  font-style: bold;
+  line-height: normal;
+  text-align: right;
+  position: absolute;
+  top: 5%;
+  left: 63%;
+}
+
+@media screen and (min-width: 601px) {
+  .v_block h2 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .v_block h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .v_block h2 {
+    top: 4%;
+    left: 40%;
+  }
+}
+
+.v_block p {
+  color: #690f4f;
+  text-shadow: 1px 1px 5px rgba(105, 15, 80, 0.5);
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  top: 50%;
+  left: 15%;
+}
+
+@media screen and (min-width: 601px) {
+  .v_block p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .v_block p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .v_block p {
+    top: 50%;
+    left: 27%;
+  }
+}
+
+.v_block .back {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 4px;
+  border: 3px solid #690f4f;
+  text-shadow: 1px 1px 5px rgba(105, 15, 80, 0.5);
+  position: absolute;
+  top: 83%;
+  left: 77%;
+}
+
+@media screen and (min-width: 601px) {
+  .v_block .back {
+    width: 210px;
+    height: 9%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .v_block .back {
+    width: 100px;
+    height: 8%;
+    position: absolute;
+    top: 87%;
+    left: 65%;
+  }
+}
+
+.v_block .back p {
+  text-align: center;
+  font-weight: 700;
+  top: 50%;
+  left: 50%;
+  color: #690f4f;
+}
+
+@media screen and (min-width: 601px) {
+  .v_block .back p {
+    font-size: 27px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .v_block .back p {
+    font-size: 20px;
+  }
+}
+
+.v_block .back:hover {
+  -webkit-box-shadow: 1px 1px 15px #470032;
+          box-shadow: 1px 1px 15px #470032;
+}
+
+.v_block .back:hover:active {
+  background-color: #4b0036;
+  width: 205px;
+  height: 9%;
+}
+
+@media screen and (max-width: 600px) {
+  .v_block .back:hover:active {
+    width: 100px;
+    height: 7.5%;
+  }
+}
+/*# sourceMappingURL=style_v.css.map */
